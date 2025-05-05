@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillSwitch - Cardfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <!-- Seleção de categorias -->
+    <div class="category-selector">
+        <input type="radio" id="frontend" name="category" checked>
+        <label for="frontend">Front-End</label>
+
+        <input type="radio" id="design" name="category">
+        <label for="design">Design</label>
+
+        <input type="radio" id="python" name="category">
+        <label for="python">Python</label>
+    </div>
+    <div class="social-icons">
+        <a href="https://github.com/leticiabrondi" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a href="https://linkedin.com/in/leticiabrondi" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin fa-lg"></i>
+        </a>
+        <a href="https://behance.net/leticiabrondi" target="_blank" aria-label="Behance">
+            <i class="fab fa-behance fa-lg"></i>
+        </a>
+        <a href="mailto:leticiabrondi06@gmail.com" aria-label="E-mail">
+            <i class="fas fa-envelope fa-lg"></i>
+        </a>
+    </div>
+
+    <!-- Container principal do card -->
+    <div class="card-wrapper">
+        <div class="card" id="info-card">
+            <!-- Frente do card (conteúdo fixo) -->
+            <div class="card-face card-front">
+                <img src="assets/img/icon.png" alt="Letícia Brondi" class="profile-icon">
+                <h1>Letícia Brondi</h1>
+                <p class="intro-text">
+                    Projeto interativo para apresentar minhas habilidades em Front-End, Design e Python. Escolha uma
+                    categoria acima e passe o mouse no card para ver as informações!
+                </p>
+            </div>
+
+            <!-- Verso do card (conteúdo dinâmico conforme categoria) -->
+            <div class="card-face card-back" id="card-back-content">
+                <!-- Conteúdo carregado via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de comportamento -->
+    <script src="assets/js/flip.js"></script>
+</body>
+
+</html>

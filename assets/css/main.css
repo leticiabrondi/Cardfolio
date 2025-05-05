@@ -1,0 +1,154 @@
+/* === MAIN.CSS === */
+/* Fonte base e variáveis da identidade visual */
+:root {
+  --bg-color: #0f0f3c;
+  --accent-color: #9253e0;
+  --text-color: #f0f0f0;
+  --card-bg: #1a1a4f;
+  --transition-speed: 0.6s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+/* Agora a categoria e os ícones são lado a lado */
+.category-selector {
+  display: flex;
+  gap: 1rem;
+  align-items: center; /* Alinha verticalmente as categorias e ícones */
+  margin-bottom: 1rem;
+}
+
+.category-selector input {
+  display: none;
+}
+
+.category-selector label {
+  background: var(--card-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.3s, border 0.3s;
+}
+
+.category-selector input:checked + label {
+  border: 2px solid var(--accent-color);
+  background: var(--accent-color);
+  color: #000;
+}
+
+/* Estilos dos ícones sociais agora estão ao lado das categorias */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-left: 1rem; /* Espaçamento entre as categorias e os ícones */
+}
+
+.social-icons a {
+  color: var(--accent-color); /* Lilás de destaque */
+  text-decoration: none;
+  font-size: 1.5rem; /* Aumenta o tamanho dos ícones */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.3); /* Ajusta o efeito de hover */
+  color: #ffffff; /* Branco ao passar o mouse */
+}
+
+/* =====================
+   CARD INTERATIVO
+===================== */
+
+.card-wrapper {
+  perspective: 1000px;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform var(--transition-speed) ease;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  background-color: var(--card-bg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  padding: 1rem; /* Ajustado o padding para diminuir o espaço */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 0.8rem; /* Diminui o espaçamento entre os elementos do card */
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+/* =====================
+   ESTILO DA CAPA
+===================== */
+
+.profile-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.6rem; /* Menos espaço abaixo da imagem */
+  display: block;
+  border: 2px solid var(--accent-color); /* contorno lilás */
+}
+
+.intro-text {
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 0 1.5rem;
+  color: #e0e0e0;
+  line-height: 1.5;
+}
+
+/* =====================
+   ESTILO DA PARTE DE TRÁS DO CARD
+===================== */
+
+.card-back h2 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.card-back ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
